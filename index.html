@@ -3,418 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPS1 — Week 1 Study Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Study Hub · BCIT Healthcare Unit Clerk</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f5f4f0;
-  --surface: #ffffff;
-  --surface2: #f0efeb;
-  --border: #e0deda;
-  --border2: #cccac4;
-  --text: #1a1917;
-  --text2: #6b6860;
-  --text3: #9e9c97;
-  --teal: #0f6e56;
-  --teal-bg: #e1f5ee;
-  --blue: #185fa5;
-  --blue-bg: #e6f1fb;
-  --amber: #854f0b;
-  --amber-bg: #faeeda;
-  --coral: #993c1d;
-  --coral-bg: #faece7;
-  --purple: #534ab7;
-  --purple-bg: #eeedfe;
-  --green: #3b6d11;
-  --green-bg: #eaf3de;
-  --warn-bg: #faeeda;
-  --warn: #854f0b;
-  --info-bg: #e6f1fb;
-  --info: #185fa5;
-  --radius: 10px;
-  --radius-sm: 6px;
+  --bg: #f5f0e8;
+  --surface: #ede8dc;
+  --surface2: #e4ddd0;
+  --border: #c8bfaa;
+  --accent: #7c5c2e;
+  --accent2: #2e7c6e;
+  --accent3: #5c2e7c;
+  --accent4: #c0392b;
+  --text: #2a2218;
+  --text-muted: #6a5c48;
+  --text-dim: #9a8c78;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 body {
-  font-family: 'IBM Plex Sans KR', sans-serif;
   background: var(--bg);
   color: var(--text);
+  font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
   font-size: 15px;
-  line-height: 1.6;
-}
-
-/* ── Header ── */
-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 1.25rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.header-title {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: .02em;
-}
-
-.header-sub {
-  font-size: 12px;
-  color: var(--text3);
-}
-
-/* ── Main nav tabs ── */
-.main-nav {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 0 1.5rem;
-  position: sticky;
-  top: 57px;
-  z-index: 99;
-}
-
-.main-nav-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-}
-
-.main-tab {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  padding: 12px 16px;
-  border: none;
-  background: transparent;
-  color: var(--text3);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  white-space: nowrap;
-  transition: color .15s, border-color .15s;
-  letter-spacing: .02em;
-}
-
-.main-tab:hover { color: var(--text2); }
-.main-tab.active { color: var(--text); border-bottom-color: var(--text); }
-
-/* ── Content ── */
-.content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1.5rem;
-}
-
-.page { display: none; }
-.page.active { display: block; }
-
-/* ── Section header ── */
-.section-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--text3);
-  margin-bottom: .75rem;
-  margin-top: 1.5rem;
-}
-.section-label:first-child { margin-top: 0; }
-
-/* ── Sub tabs ── */
-.sub-tabs {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 1.25rem;
-}
-
-.sub-tab {
-  padding: 5px 13px;
-  border-radius: 999px;
-  border: 1px solid var(--border2);
-  background: transparent;
-  color: var(--text2);
-  font-size: 12px;
-  font-family: 'IBM Plex Sans KR', sans-serif;
-  cursor: pointer;
-  transition: all .15s;
-}
-
-.sub-tab:hover { border-color: var(--text3); color: var(--text); }
-.sub-tab.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-.sub-section { display: none; }
-.sub-section.active { display: block; }
-
-/* ── Level cards (care levels) ── */
-.level-list { display: flex; flex-direction: column; gap: 8px; }
-
-.level-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color .15s;
-}
-
-.level-card:hover { border-color: var(--border2); }
-.level-card.open { border-color: var(--border2); }
-
-.level-header {
-  padding: 13px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.level-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.level-title-wrap { flex: 1; }
-.level-title { font-size: 14px; font-weight: 500; color: var(--text); }
-.level-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
-
-.level-chevron {
-  width: 16px; height: 16px;
-  color: var(--text3);
-  transition: transform .2s;
-  flex-shrink: 0;
-}
-.level-card.open .level-chevron { transform: rotate(180deg); }
-
-.level-detail {
-  display: none;
-  padding: 0 16px 14px 16px;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--text2);
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-  margin: 0 0 0 0;
-}
-.level-card.open .level-detail { display: block; }
-
-/* ── Flip cards ── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-}
-
-.flip-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  cursor: pointer;
-  transition: border-color .15s;
-  min-height: 88px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.flip-card:hover { border-color: var(--border2); }
-.flip-card.open { background: var(--surface2); border-color: var(--border2); }
-
-.card-chip {
-  font-size: 10px;
-  font-weight: 500;
-  padding: 2px 7px;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 3px;
-  font-family: 'IBM Plex Mono', monospace;
-  letter-spacing: .03em;
-}
-.chip-mem { background: var(--warn-bg); color: var(--warn); }
-.chip-info { background: var(--info-bg); color: var(--info); }
-
-.card-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--text3);
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.card-en {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
-  line-height: 1.4;
-}
-
-.card-ko {
-  font-size: 12px;
-  color: var(--text2);
-  display: none;
-}
-.flip-card.open .card-ko { display: block; }
-
-.card-detail {
-  font-size: 12px;
-  color: var(--text2);
-  line-height: 1.6;
-  display: none;
-  margin-top: 6px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-}
-.flip-card.open .card-detail { display: block; }
-
-/* ── HA cards ── */
-.ha-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
-}
-
-.ha-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-}
-
-.ha-name {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 10px;
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.ha-row { margin-bottom: 8px; }
-
-.ha-lbl {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--text3);
-  font-family: 'IBM Plex Mono', monospace;
-  margin-bottom: 2px;
-}
-
-.ha-val { font-size: 12px; color: var(--text2); line-height: 1.5; }
-
-/* ── QA accordion ── */
-.qa-list { display: flex; flex-direction: column; gap: 8px; }
-
-.qa-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.qa-q {
-  padding: 14px 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  transition: background .15s;
-}
-.qa-q:hover { background: var(--surface2); }
-.qa-q.open { background: var(--surface2); }
-
-.qa-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  color: var(--text3);
-  white-space: nowrap;
-  padding-top: 2px;
-  min-width: 24px;
-}
-
-.qa-text {
-  flex: 1;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
   line-height: 1.5;
 }
 
-.qa-chev {
-  width: 16px; height: 16px;
-  color: var(--text3);
-  flex-shrink: 0;
-  transition: transform .2s;
-  margin-top: 2px;
+/* ── HEADER ── */
+header {
+  background: var(--text);
+  padding: 28px 24px 24px;
 }
-.qa-q.open .qa-chev { transform: rotate(180deg); }
-
-.qa-a {
-  display: none;
-  padding: 14px 16px;
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.site-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.site-title {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.site-title span {
+  color: #c8a87a;
+}
+.site-sub {
   font-size: 13px;
-  line-height: 1.75;
-  color: var(--text2);
-  border-top: 1px solid var(--border);
+  color: rgba(255,255,255,0.45);
+  margin-top: 8px;
+  font-weight: 300;
 }
-.qa-a.open { display: block; }
 
-.qa-a strong { color: var(--text); font-weight: 500; }
-.qa-a ul { padding-left: 1.25rem; margin: .4rem 0; }
-.qa-a li { margin: .25rem 0; }
-.qa-a .en { color: var(--text); font-style: italic; }
+/* ── MAIN ── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
 
-/* ── Tip box ── */
-.tip-box {
+/* ── SECTION HEADER ── */
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  margin-top: 32px;
+}
+.section-label:first-child { margin-top: 0; }
+
+/* ── COURSE CARDS ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
+  position: relative;
+  overflow: hidden;
+}
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--card-color, var(--accent));
+  border-radius: 14px 14px 0 0;
+}
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(42,34,24,0.1);
+  border-color: var(--card-color, var(--accent));
+}
+.course-card:active { transform: translateY(0); }
+
+.card-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+.card-code {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--card-color, var(--accent));
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--surface2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.card-arrow {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 16px;
+  color: var(--card-color, var(--accent));
+  opacity: 0.5;
+  transition: opacity 0.12s, transform 0.12s;
+}
+.course-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* ── COMING SOON CARD ── */
+.course-card.coming-soon {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.course-card.coming-soon::after {
+  content: 'COMING SOON';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  background: var(--surface2);
+  padding: 3px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* ── PROGRESS BAR ── */
+.progress-section {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--text3);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 10px 14px;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.progress-title {
   font-size: 13px;
-  color: var(--text2);
-  margin: 1rem 0;
+  font-weight: 600;
+  color: var(--text);
 }
-.tip-box strong { color: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
-
-/* ── Divider ── */
-.divider {
-  height: 1px;
-  background: var(--border);
-  margin: .75rem 0;
-}
-
-/* ── Hint text ── */
-.hint {
+.progress-pct {
+  font-family: 'Space Mono', monospace;
   font-size: 12px;
-  color: var(--text3);
-  margin-bottom: 1rem;
+  color: var(--accent2);
+  font-weight: 700;
+}
+.progress-bar {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent2);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.progress-sub {
+  font-size: 11px;
+  color: var(--text-dim);
 }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .card-grid { grid-template-columns: 1fr 1fr; }
-  .ha-grid { grid-template-columns: 1fr; }
-  .content { padding: 1rem; }
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+  color: var(--text-dim);
+  font-family: 'Space Mono', monospace;
 }
 </style>
 </head>
@@ -422,841 +252,116 @@ header {
 
 <header>
   <div class="header-inner">
-    <span class="header-title">CLRK 1000 · HPS1</span>
-    <span class="header-sub">Week 1 — Canadian Healthcare System</span>
+    <div class="site-label">BCIT · Healthcare Unit Clerk</div>
+    <div class="site-title">STUDY<span>HUB</span></div>
+    <div class="site-sub">Doha의 공부 자료 모음 · 2026</div>
   </div>
 </header>
 
-<nav class="main-nav">
-  <div class="main-nav-inner">
-    <button class="main-tab active" onclick="showPage('notes', this)">Study Notes</button>
-    <button class="main-tab" onclick="showPage('qa', this)">Short Answer Q&A</button>
-    <button class="main-tab" onclick="showPage('havision', this)">HA Vision / Values</button>
-  </div>
-</nav>
+<main>
 
-<div class="content">
-
-<!-- ═══════════════════════════════════════════════
-     PAGE 1 — STUDY NOTES
-═══════════════════════════════════════════════ -->
-<div id="page-notes" class="page active">
-
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="showSub('levels', this, 'notes')">케어 레벨</button>
-    <button class="sub-tab" onclick="showSub('cha', this, 'notes')">Canada Health Act</button>
-    <button class="sub-tab" onclick="showSub('gov', this, 'notes')">연방 vs 주</button>
-    <button class="sub-tab" onclick="showSub('facilities', this, 'notes')">시설 유형</button>
-    <button class="sub-tab" onclick="showSub('bc', this, 'notes')">BC 보건당국</button>
-    <button class="sub-tab" onclick="showSub('seniors', this, 'notes')">노인 케어</button>
+  <!-- Progress -->
+  <div class="progress-section">
+    <div class="progress-header">
+      <span class="progress-title">📅 프로그램 진행률</span>
+      <span class="progress-pct">진행 중</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:20%"></div>
+    </div>
+    <div class="progress-sub">BCIT Healthcare Unit Clerk Program · April 2026 입학</div>
   </div>
 
-  <!-- LEVELS -->
-  <div id="notes-levels" class="sub-section active">
-    <div class="section-label">Care levels — 클릭하면 영어 풀설명</div>
-    <div class="hint">각 카드 클릭 → 영어 원문 + 세부 내용</div>
-    <div class="level-list">
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#1D9E75"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">1차 — Primary Care</div>
-            <div class="level-sub">첫 접촉 · GP, NP, PA · referral 발급</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          <strong>First point of contact</strong> with the health care system.<br><br>
-          Providers: <em>Family doctor, Nurse Practitioner (NP), Physician Assistant (PA)</em><br>
-          Primary specialties also include: <em>OB-GYN, geriatrician, pediatrician</em><br><br>
-          Payment: <em>fee-for-service</em> (private practice) / <em>salary or blended payment</em> (clinics)<br><br>
-          Functions: acute illness, injury, screenings, referrals, <em>coordination of care</em>, health promotion, maternity, rehab, palliative
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#378ADD"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">2차 — Secondary Care</div>
-            <div class="level-sub">전문의 · referral 필요 · 병원/LTC/재가</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          <strong>Specialist care after referral from primary</strong><br><br>
-          Specialists: <em>Cardiologist</em> (심장), <em>Oncologist</em> (암), <em>Endocrinologist</em> (호르몬/당뇨)<br><br>
-          Settings: <em>hospital, long-term care facility, home care, palliative, hospice</em><br><br>
-          Problems: <em>wrong specialist referral, lack of coordination of care</em><br><br>
-          Also called: <em>"hospital and community care"</em> — can be <em>elective</em> (planned) or <em>urgent/emergency</em>
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#EF9F27"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">3차 — Tertiary Care</div>
-            <div class="level-sub">고도 전문장비 · 대형 의료센터</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          <strong>Highly specialized equipment and expertise</strong><br><br>
-          Examples: <em>coronary artery bypass surgery, dialysis, plastic surgeries, neurosurgeries, severe burn treatments, complex procedures</em><br><br>
-          May require <em>transfer from small local hospital</em> to specialized medical center
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#D85A30"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">4차 — Quaternary Care</div>
-            <div class="level-sub">실험적 · 초전문화 · 특정 센터만</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-info">이해</span><br><br>
-          <strong>Extension of tertiary care — more specialized and highly unusual</strong><br><br>
-          Types: <em>experimental medicine and procedures, uncommon and specialized surgeries</em><br><br>
-          Not every hospital offers this — <em>not universally available</em>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- CHA -->
-  <div id="notes-cha" class="sub-section">
-    <div class="section-label">Canada Health Act — 5원칙 + 2조건</div>
-    <div class="hint">클릭하면 영어 원문 표현 확인</div>
-    <div class="card-grid">
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">원칙 1</div>
-        <div class="card-en">Public Administration</div>
-        <div class="card-ko">비영리 공공기관 운영</div>
-        <div class="card-detail">The plan must be administered on a <strong>non-profit basis</strong> by a <strong>public authority accountable</strong> to the provincial/territorial government.<br><br>Forbids neither for-profit insurers nor for-profit providers acting on contract.</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">원칙 2</div>
-        <div class="card-en">Comprehensiveness</div>
-        <div class="card-ko">모든 의학적 필수 서비스 포함</div>
-        <div class="card-detail">Must insure all <strong>medically necessary services</strong> provided by hospitals, medical practitioners, and dentists working within a hospital setting.</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">원칙 3</div>
-        <div class="card-en">Universality</div>
-        <div class="card-ko">모든 피보험자에게 동등하게</div>
-        <div class="card-detail">Must entitle <strong>all insured persons</strong> to health insurance coverage on <strong>uniform terms and conditions</strong>.</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">원칙 4</div>
-        <div class="card-en">Accessibility</div>
-        <div class="card-ko">재정적 장벽 없이 접근 보장</div>
-        <div class="card-detail">Must provide all insured persons reasonably necessary hospital and physician services <strong>without financial or other barriers</strong>.<br><br>Discourages <strong>extra billing</strong> and <strong>user fees</strong>.</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">원칙 5</div>
-        <div class="card-en">Portability</div>
-        <div class="card-ko">타 주/해외 이동 시 보장 유지</div>
-        <div class="card-detail">Must cover all persons when they <strong>move to another province/territory</strong> within Canada and when they <strong>travel abroad</strong>.<br><br>Prior approval may be required for non-emergency services outside jurisdiction.</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-info">2조건</span>
-        <div class="card-label">CHA 조건</div>
-        <div class="card-en">2 Conditions to meet</div>
-        <div class="card-ko">플랜 운영 조건</div>
-        <div class="card-detail">1. Plan administered <strong>non-profit</strong> by a <strong>public authority</strong> appointed by the provincial government.<br><br>2. Public authority must be <strong>accountable</strong> to the provincial government.</div>
-      </div>
-
-    </div>
-    <div class="tip-box" style="margin-top:1rem">
-      <strong>암기 팁</strong> &nbsp;P · C · U · A · P &nbsp;→&nbsp; "Please Come Use A Pass"
-    </div>
-  </div>
-
-  <!-- GOV -->
-  <div id="notes-gov" class="sub-section">
-    <div class="section-label">연방 vs 주/준주 책임</div>
-    <div class="hint">클릭하면 영어 키워드 확인</div>
-    <div class="card-grid">
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">연방 — Federal</div>
-        <div class="card-en">Sets & administers national standards</div>
-        <div class="card-ko">전국 기준 설정 및 관리</div>
-        <div class="card-detail"><strong>Direct service groups:</strong> First Nations (on reserves), Inuit, serving Canadian Armed Forces, eligible veterans, federal penitentiary inmates, some refugee claimants<br><br><strong>Also:</strong> health protection & regulation, consumer safety, disease surveillance & prevention, health promotion & research, tax measures</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">주/준주 — Provincial</div>
-        <div class="card-en">Management & delivery of health services</div>
-        <div class="card-ko">실제 서비스 운영·제공</div>
-        <div class="card-detail"><strong>Responsibilities:</strong> administration of health insurance plans, planning & implementation of health promotion, financing & evaluation of hospitals & facilities, <strong>negotiation of fee schedules</strong> with health professionals<br><br>Must meet national standards to receive <strong>federal cash and tax transfers</strong></div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-info">구조</span>
-        <div class="card-label">3단계 정부</div>
-        <div class="card-en">3 orders of government</div>
-        <div class="card-ko">공중보건 공동 책임</div>
-        <div class="card-detail">1. <strong>Federal</strong><br>2. <strong>Provincial / Territorial</strong><br>3. <strong>Local or Municipal</strong><br><br>Delivery happens primarily at <strong>provincial/territorial and local levels</strong></div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-info">구조</span>
-        <div class="card-label">캐나다 의료 별명</div>
-        <div class="card-en">Medicare</div>
-        <div class="card-ko">10개 주 + 3개 준주 시스템</div>
-        <div class="card-detail">Best described as an <strong>interlocking set of ten provincial and three territorial health systems</strong>.<br><br>Known as <strong>"Medicare"</strong>.<br><br>Each plan covers <strong>medically necessary hospital and doctors' services</strong> on a prepaid basis, without direct charges at point of service.</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- FACILITIES -->
-  <div id="notes-facilities" class="sub-section">
-    <div class="section-label">시설 유형 — 클릭하면 영어 정의 + 비용</div>
-    <div class="level-list">
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#E24B4A"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Acute Care</div>
-            <div class="level-sub">단기 집중 치료 · 병원/응급실</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          <strong>Branch of secondary health care</strong><br><br>
-          Active <strong>short-term treatment</strong> for: <em>severe injury, episode of illness, urgent medical condition, recovery from surgery</em><br><br>
-          Setting: <em>hospital, doctor's office, emergency room</em><br><br>
-          ER handles <em>rapidly changing conditions</em> — accidents, injuries, sudden medical needs
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#7F77DD"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Long Term Care (LTC)</div>
-            <div class="level-sub">24시간 감독 · 복잡한 케어 · 비용 세후소득 80%</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기 — 비용 80%</span><br><br>
-          <strong>24-hour supervision</strong> — patients with <strong>complex care needs</strong> who can no longer be cared for at home<br><br>
-          Includes: <em>chronic geriatric condition management, rehabilitation, palliation, assistive care, social support</em><br><br>
-          LTCHs certified as acute-care hospitals but avg stay <strong>more than 25 days</strong><br><br>
-          Cost: <strong>80% of after-tax income</strong><br><br>
-          <strong>4 levels:</strong> <em>Residential care, Nursing care, Respite care, End-of-life care</em>
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#1D9E75"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Assisted Living (Community Care)</div>
-            <div class="level-sub">일부 지원 필요 · 자립 가능 · 비용 세후소득 70%</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <span class="card-chip chip-mem">암기 — 비용 70%</span><br><br>
-          <strong>Housing, hospitality services, and personal care</strong> for adults who can live independently and make decisions on their own but <strong>require a supportive environment</strong><br><br>
-          Cost: <strong>70% of after-tax income</strong><br><br>
-          Provides: <em>private unit with lockable door, personal care, 2 meals/day, access to activities, weekly housekeeping, laundry, 24-hour emergency response</em><br><br>
-          <strong>3 levels:</strong> Level 1 (low — mostly independent), Level 2 (moderate), Level 3 (high)
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- BC -->
-  <div id="notes-bc" class="sub-section">
-    <div class="section-label">BC 보건당국 — Regional 5 + Province-wide 2</div>
-    <div class="hint">클릭하면 담당 지역 + 서비스 확인</div>
-    <div class="card-grid">
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Regional</div>
-        <div class="card-en">Vancouver Coastal Health</div>
-        <div class="card-ko">North Van 포함 — 우리 지역!</div>
-        <div class="card-detail">Greater Vancouver + Coast Garibaldi area<br><br>Services: <strong>primary, secondary, tertiary, quaternary care</strong>, home & community care, mental health, addictions, population & preventive health</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Regional</div>
-        <div class="card-en">Fraser Health</div>
-        <div class="card-ko">Surrey, Burnaby, Langley 등</div>
-        <div class="card-detail">Fraser North / Fraser South / Fraser East<br><br><strong>13 acute-care hospitals</strong> — 3 regional + 9 community + 1 outpatient surgery centre<br><br>Regional hospitals: Abbotsford Regional, Royal Columbian, Surrey Memorial</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Regional</div>
-        <div class="card-en">Interior Health</div>
-        <div class="card-ko">Kelowna, Kamloops 등 내륙</div>
-        <div class="card-detail">As of 2020: <strong>16 community hospitals, 4 regional hospitals, 2 tertiary hospitals, 22 health care centers</strong></div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Regional</div>
-        <div class="card-en">Island Health</div>
-        <div class="card-ko">Vancouver Island + Gulf Islands</div>
-        <div class="card-detail">Also known as <strong>Vancouver Island Health Authority (VIHA)</strong><br><br>Areas: Vancouver Island, Gulf Islands, Johnstone Strait, part of Central Coast<br><br>Major hospitals: Royal Jubilee, Victoria General, Nanaimo Regional General<br><br>150 hospitals and health centres</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Regional</div>
-        <div class="card-en">Northern Health</div>
-        <div class="card-ko">BC 북부 절반</div>
-        <div class="card-detail">Northern half of BC — Prince George, Prince Rupert, Dawson Creek, Fort St. John 등<br><br>18 hospitals — largest: <strong>University Hospital of Northern British Columbia (UHNBC)</strong></div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Province-wide</div>
-        <div class="card-en">PHSA</div>
-        <div class="card-ko">Provincial Health Services Authority</div>
-        <div class="card-detail"><strong>Only health authority in Canada with a province-wide mandate</strong> for specialized services<br><br>Includes: BC Cancer, BC CDC, BC Children's Hospital, BC Ambulance Service, BC Mental Health & Substance Use, BC Renal, BC Transplant, BC Women's Hospital, Cardiac Services BC</div>
-      </div>
-
-      <div class="flip-card" onclick="flipCard(this)">
-        <span class="card-chip chip-mem">암기</span>
-        <div class="card-label">Province-wide</div>
-        <div class="card-en">FNHA</div>
-        <div class="card-ko">First Nations Health Authority</div>
-        <div class="card-detail">Responsible for: <strong>planning, managing, delivering, and funding</strong> First Nations health programs previously under Health Canada<br><br>Works with BC Ministry of Health to address service gaps and improve health outcomes for BC First Nations<br><br><strong>First province-wide First Nations Health Authority in Canada</strong></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SENIORS -->
-  <div id="notes-seniors" class="sub-section">
-    <div class="section-label">노인 거주 3단계</div>
-    <div class="hint">클릭하면 영어 정의 + ADL 항목 확인</div>
-    <div class="level-list">
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#639922"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Independent Living (IL)</div>
-            <div class="level-sub">건강 · 완전 자립 · 편의 서비스</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <strong>No major health issues</strong> — can live well on their own<br><br>
-          <strong>Do NOT need assistance</strong> with ADLs: <em>grooming, personal care, eating, transportation, housekeeping</em><br><br>
-          Services offered: <em>home/lawn maintenance, housekeeping, transportation, meal preparation, spa/hair salon, community activities</em><br><br>
-          Full kitchens available in most suites
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#378ADD"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Assisted Living (ASL)</div>
-            <div class="level-sub">일부 지원 필요 · 라운드클락 케어 가능</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          Can reside on own but <strong>need help</strong> with ADLs: <em>grooming, bathing, housekeeping, medication assistance, meal preparation, transportation</em><br><br>
-          <strong>Round-the-clock care</strong> can be provided<br><br>
-          Meals mostly in <em>main dining room</em> — limited kitchen in individual suite<br><br>
-          <em>Community activities, outings, enrichment</em> offered<br><br>
-          Cost: <strong>70% of after-tax income</strong>
-        </div>
-      </div>
-
-      <div class="level-card" onclick="toggleLevel(this)">
-        <div class="level-header">
-          <div class="level-dot" style="background:#7F77DD"></div>
-          <div class="level-title-wrap">
-            <div class="level-title">Long Term Care (LTC)</div>
-            <div class="level-sub">혼자 살 수 없음 · 24hr 케어 · waitlist</div>
-          </div>
-          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="level-detail">
-          <strong>Designed for seniors who need extra care and cannot live on their own</strong><br><br>
-          <strong>Round-the-clock care</strong> available<br><br>
-          Help with: <em>grooming, bathing, housekeeping, medication, meal preparation, eating assistance</em> + community activities<br><br>
-          Availability <em>extremely limited</em> — potential residents put on a <em>variable waitlist</em><br><br>
-          Cost: <strong>80% of after-tax income</strong>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="section-label" style="margin-top:1.5rem">ADL — Activities of Daily Living</div>
-    <div class="card-grid">
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">ADL</div>
-        <div class="card-en">Grooming</div>
-        <div class="card-ko">개인 위생 / 외모 관리</div>
-      </div>
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">ADL</div>
-        <div class="card-en">Bathing</div>
-        <div class="card-ko">목욕</div>
-      </div>
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">ADL</div>
-        <div class="card-en">Medication assistance</div>
-        <div class="card-ko">투약 보조</div>
-      </div>
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">ADL</div>
-        <div class="card-en">Meal preparation</div>
-        <div class="card-ko">식사 준비</div>
-      </div>
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">ADL (LTC)</div>
-        <div class="card-en">Incontinence management</div>
-        <div class="card-ko">요실금 관리</div>
-      </div>
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="card-label">결정 기준</div>
-        <div class="card-en">Level of care</div>
-        <div class="card-ko">케어 강도 결정</div>
-        <div class="card-detail">Determined by the <strong>intensity of effort required</strong> to diagnose, treat, preserve, or maintain an individual's physical or emotional status.</div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- end page-notes -->
-
-
-<!-- ═══════════════════════════════════════════════
-     PAGE 2 — SHORT ANSWER Q&A
-═══════════════════════════════════════════════ -->
-<div id="page-qa" class="page">
-
-  <div class="sub-tabs">
-    <button class="sub-tab active" onclick="showSub('worksheet', this, 'qa')">워크시트 Q1-3</button>
-    <button class="sub-tab" onclick="showSub('extra', this, 'qa')">추가 예상 문제</button>
-  </div>
-
-  <!-- WORKSHEET -->
-  <div id="qa-worksheet" class="sub-section active">
-    <div class="qa-list">
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q1</span>
-          <span class="qa-text">Explain what a Long-Term Care Facility is.</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기 포인트</span><br><br>
-          A <strong>Long-Term Care (LTC) facility</strong> provides <strong>24-hour supervision and care</strong> for individuals with complex care needs who can no longer be cared for in their own homes or assisted living residences.<br><br>
-          LTC facilities offer a range of services including:
-          <ul>
-            <li>Management of <strong>chronic and geriatric conditions</strong></li>
-            <li>Rehabilitation and palliative care</li>
-            <li>Standard accommodation, clinical support, meals, laundry, hygiene supplies</li>
-            <li>Social, physical, and recreational activities</li>
-            <li>Incontinence management and wheelchair maintenance</li>
-          </ul>
-          <div class="divider"></div>
-          LTC has <strong>four levels of care:</strong> <em>Residential care, Nursing care, Respite care, and End-of-life care.</em><br><br>
-          The cost is typically <strong>80% of after-tax income.</strong> LTC hospitals (LTCHs) are certified as acute-care hospitals but focus on patients with stays averaging <strong>more than 25 days.</strong>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q2</span>
-          <span class="qa-text">Explain what an Acute Care facility is.</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기 포인트</span><br><br>
-          An <strong>Acute Care facility</strong> is a branch of <strong>secondary health care</strong> where patients receive <strong>active, short-term treatment</strong> for a severe injury, episode of illness, urgent medical condition, or during recovery from surgery.<br><br>
-          Acute care is typically performed in a <strong>hospital setting or doctor's office.</strong> Emergency rooms serve patients with acute needs — including accidents, injuries, or sudden medical conditions — and are equipped to handle <strong>rapidly changing conditions.</strong>
-          <div class="divider"></div>
-          Key distinction from LTC: <em>acute care = short-term, urgent; LTC = long-term, complex ongoing needs.</em>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q3</span>
-          <span class="qa-text">Explain what Community Care Facilities (Assisted Living) is.</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기 포인트</span><br><br>
-          A <strong>Community Care facility (Assisted Living)</strong> provides housing, hospitality services, and personal care for adults who can <strong>live independently and make decisions on their own behalf</strong>, but <strong>can no longer manage safely at home</strong> due to physical or functional health challenges.<br><br>
-          Services provided include:
-          <ul>
-            <li>Private unit with a <strong>lockable door</strong></li>
-            <li>Personal care services</li>
-            <li><strong>2 meals per day</strong></li>
-            <li>Access to activities, weekly housekeeping, laundry</li>
-            <li><strong>24-hour emergency response</strong></li>
-          </ul>
-          <div class="divider"></div>
-          Cost is <strong>70% of after-tax income.</strong><br><br>
-          <strong>3 levels of care:</strong><br>
-          <ul>
-            <li><em>Level 1</em> — Low: mostly independent, may need reminders for ADLs</li>
-            <li><em>Level 2</em> — Moderate: needs regular assistance</li>
-            <li><em>Level 3</em> — High: significant care needs</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- EXTRA -->
-  <div id="qa-extra" class="sub-section">
-    <div class="qa-list">
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q4</span>
-          <span class="qa-text">What are the two functions of primary health care?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          Primary health care serves a <strong>dual function:</strong><br><br>
-          <strong>1.</strong> <em>Direct provision of first-contact health care services</em> — treating illness, injury, and providing preventative care.<br><br>
-          <strong>2.</strong> <em>Coordination of patients' health care services</em> — ensuring continuity of care and ease of movement across the health care system when specialized services are needed (e.g., referrals to specialists or hospitals).
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q5</span>
-          <span class="qa-text">What are the 5 principles of the Canada Health Act? Briefly explain each.</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기 필수 — P·C·U·A·P</span><br><br>
-          <strong>1. Public Administration</strong> — The plan must be administered on a non-profit basis by a public authority accountable to the provincial/territorial government.<br><br>
-          <strong>2. Comprehensiveness</strong> — All medically necessary services provided by hospitals, physicians, and hospital-based dentists must be covered.<br><br>
-          <strong>3. Universality</strong> — All insured persons are entitled to coverage on uniform terms and conditions.<br><br>
-          <strong>4. Accessibility</strong> — Insured persons must have reasonable access to services without financial or other barriers. Extra billing and user fees are discouraged.<br><br>
-          <strong>5. Portability</strong> — Coverage is maintained when a person moves to another province/territory or travels abroad.
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q6</span>
-          <span class="qa-text">What are the 2 conditions that must be met under the Canada Health Act?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          <strong>Condition 1:</strong> The health care insurance plan of a province must be administered and operated on a <em>non-profit basis by a public authority</em> appointed or designated by the provincial government.<br><br>
-          <strong>Condition 2:</strong> The public authority must be <em>responsible (accountable) to the provincial government</em> for that administration and operation.
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q7</span>
-          <span class="qa-text">What is the difference between LTC and Assisted Living?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <strong>Assisted Living</strong> is for people who can still make decisions independently but need support with daily activities. They live in their own private unit and pay <strong>70% of after-tax income.</strong><br><br>
-          <strong>Long-Term Care</strong> is for people with complex needs who <em>can no longer safely live on their own</em>, even with support. It provides <strong>24-hour nursing supervision</strong> and costs <strong>80% of after-tax income.</strong><br><br>
-          Key difference: <em>decision-making capacity and level of independence.</em>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q8</span>
-          <span class="qa-text">How are hospitals funded in Canada?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          Most Canadian hospitals are funded through <strong>annual global budgets</strong> — negotiated with provincial/territorial ministries of health or regional health authorities — that set overall expenditure targets or limits.<br><br>
-          This is distinct from a <em>fee-for-service</em> model. Some provinces have been experimenting with supplementary funding approaches.<br><br>
-          Most hospitals are operated by <em>community boards of trustees, voluntary organizations, or regional health authorities.</em>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q9</span>
-          <span class="qa-text">What services are NOT covered under the Canada Health Act?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-info">Supplementary benefits</span><br><br>
-          The following are <strong>not generally covered</strong> under the publicly funded system:
-          <ul>
-            <li><em>Prescription drugs</em> (outside hospitals)</li>
-            <li><em>Dental care</em></li>
-            <li><em>Vision care</em></li>
-            <li><em>Medical equipment and appliances</em> (prostheses, wheelchairs)</li>
-            <li>Services of other health professionals such as <em>physiotherapists</em></li>
-          </ul>
-          Provinces may cover some of these for seniors, children, and low-income residents. Others pay through <em>out-of-pocket payments or private health insurance.</em>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q10</span>
-          <span class="qa-text">How is level of care determined?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          Level of care is determined by the <strong>intensity of effort required</strong> to diagnose, treat, preserve, or maintain an individual's <em>physical or emotional status.</em><br><br>
-          Levels of service are based on the <em>patient's condition and the needed level of care</em>, used to identify and verify that the patient is receiving care at the appropriate level.
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q11</span>
-          <span class="qa-text">What is the difference between PHSA and regional health authorities?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <strong>Regional health authorities</strong> (VCH, Fraser, Interior, Island, Northern) each serve a <em>defined geographic region</em> and provide a full range of health services to the population in that area.<br><br>
-          <strong>PHSA (Provincial Health Services Authority)</strong> is unique in Canada as the only health authority with a <em>province-wide mandate</em> for specialized health services. It operates programs like BC Cancer, BC Children's Hospital, BC Transplant, and BC Women's Hospital — serving all of BC regardless of region.
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q12</span>
-          <span class="qa-text">Which groups does the federal government directly serve?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <span class="card-chip chip-mem">암기</span><br><br>
-          The federal government directly delivers health services to:
-          <ul>
-            <li><em>First Nations people living on reserves</em></li>
-            <li><em>Inuit</em> in certain communities</li>
-            <li><em>Serving members of the Canadian Armed Forces</em></li>
-            <li><em>Eligible veterans</em></li>
-            <li><em>Inmates in federal penitentiaries</em></li>
-            <li><em>Some groups of refugee claimants</em></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <div class="qa-q" onclick="toggleQA(this)">
-          <span class="qa-num">Q13</span>
-          <span class="qa-text">What are the three basic levels of seniors living in Canada?</span>
-          <svg class="qa-chev" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="qa-a">
-          <strong>1. Independent Living (IL)</strong> — No major health issues; fully self-sufficient. Does not need help with ADLs.<br><br>
-          <strong>2. Assisted Living (ASL)</strong> — Can live independently but needs help with some ADLs. Round-the-clock care available. Cost: 70% of after-tax income.<br><br>
-          <strong>3. Long-Term Care (LTC)</strong> — Cannot live independently. Requires 24-hour care. Limited availability with variable waitlists. Cost: 80% of after-tax income.
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div><!-- end page-qa -->
-
-
-<!-- ═══════════════════════════════════════════════
-     PAGE 3 — HA VISION / PURPOSE / VALUES
-═══════════════════════════════════════════════ -->
-<div id="page-havision" class="page">
-  <div class="hint">각 보건당국의 공식 Vision / Purpose / Values — 워크시트 Q4 답변용</div>
-  <div class="ha-grid">
-
-    <div class="ha-card">
-      <div class="ha-name">Vancouver Coastal Health (VCH)</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Healthy lives in healthy communities</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose</div>
-        <div class="ha-val">To bring staff and medical staff together as one collective team to deliver an exceptional care experience for all</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">We care for everyone · We are always learning · We strive for better results</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">Fraser Health</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Better health. Best in health care.</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose</div>
-        <div class="ha-val">To improve the health of the population and the quality of life of the people we serve</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">Respect · Caring · Trust</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">Island Health</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Excellent health and care for everyone, everywhere, every time</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose</div>
-        <div class="ha-val">To provide superior health care through innovation, teaching and research — creating healthier, stronger communities and a better quality of life</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values (CARE)</div>
-        <div class="ha-val">Courage · Aspire (to highest quality & safety) · Respect · Empathy</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">Interior Health</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Health and well-being for all</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose / Mission</div>
-        <div class="ha-val">Working together to improve quality of life for individuals and communities, inspired by innovation and partnership</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">Quality · Integrity · Compassion · Safety</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">Northern Health</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Northern Health leads the way in promoting health and providing health services for Northern and rural populations</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose / Mission</div>
-        <div class="ha-val">Through the efforts of dedicated staff and physicians, in partnership with communities and organizations, we provide exceptional health services for Northerners</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">Empathy · Respect · Collaboration · Innovation</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">PHSA</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Boldly create an equitable, anti-racist and culturally safe health system where everyone thrives</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose</div>
-        <div class="ha-val">Inspire and unite specialized teams to create a healthier province for all</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">Compassion · Respect · Equity · Courage</div>
-      </div>
-    </div>
-
-    <div class="ha-card">
-      <div class="ha-name">FNHA</div>
-      <div class="ha-row">
-        <div class="ha-lbl">Vision</div>
-        <div class="ha-val">Healthy, self-determining, and vibrant BC First Nations children, families, and communities</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Purpose / Mission</div>
-        <div class="ha-val">To support BC First Nations individuals, families and communities to achieve and enjoy the highest level of health and wellness — honouring traditions and cultures</div>
-      </div>
-      <div class="ha-row">
-        <div class="ha-lbl">Values</div>
-        <div class="ha-val">Respect · Discipline · Relationships · Inclusion · Equity</div>
-      </div>
-    </div>
+  <!-- Active courses -->
+  <div class="section-label">📚 현재 수강 중</div>
+  <div class="cards-grid">
+
+    <a class="course-card" href="medterm.html" style="--card-color:#7c5c2e">
+      <div class="card-icon">🧬</div>
+      <div class="card-code">OFFC 1001</div>
+      <div class="card-title">Medical Terminology & Anatomy</div>
+      <div class="card-desc">의학 용어, 해부학, 신체 공강, 방향 용어, 척주 구분. 플래시카드·퀴즈·자동 읽기 포함.</div>
+      <div class="card-tags">
+        <span class="tag">Ch.1 용어</span>
+        <span class="tag">Ch.2 해부</span>
+        <span class="tag">플래시카드</span>
+        <span class="tag">🔊 음성</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="course-card" href="hps1.html" style="--card-color:#185fa5">
+      <div class="card-icon">🏥</div>
+      <div class="card-code">HPS1 · CLRK 1000</div>
+      <div class="card-title">Healthcare Systems & Unit Clerk</div>
+      <div class="card-desc">병원 구조, Unit Clerk 역할, 의료 시스템, Week 1 핵심 내용 정리.</div>
+      <div class="card-tags">
+        <span class="tag">Week 1</span>
+        <span class="tag">병원 구조</span>
+        <span class="tag">Unit Clerk</span>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
 
   </div>
 
-  <div class="tip-box" style="margin-top:1.25rem">
-    <strong>Island Health 암기 팁</strong> &nbsp;Values = CARE &nbsp;→&nbsp; Courage · Aspire · Respect · Empathy
+  <!-- Upcoming -->
+  <div class="section-label">🔒 추가 예정</div>
+  <div class="cards-grid">
+
+    <a class="course-card coming-soon" href="#" style="--card-color:#2e7c6e">
+      <div class="card-icon">📋</div>
+      <div class="card-code">CLRK 1000</div>
+      <div class="card-title">Unit Clerk Procedures</div>
+      <div class="card-desc">오더 프로세싱, 차트 관리, 병동 행정 업무.</div>
+      <div class="card-tags"><span class="tag">추가 예정</span></div>
+    </a>
+
+    <a class="course-card coming-soon" href="#" style="--card-color:#854f0b">
+      <div class="card-icon">💊</div>
+      <div class="card-code">OFFC 1002</div>
+      <div class="card-title">Pharmacology Basics</div>
+      <div class="card-desc">약물 분류, 약어, 투약 관련 의학 용어.</div>
+      <div class="card-tags"><span class="tag">추가 예정</span></div>
+    </a>
+
+    <a class="course-card coming-soon" href="#" style="--card-color:#534ab7">
+      <div class="card-icon">📊</div>
+      <div class="card-code">HIM</div>
+      <div class="card-title">Health Information Management</div>
+      <div class="card-desc">의무기록, 코딩, 데이터 관리.</div>
+      <div class="card-tags"><span class="tag">추가 예정</span></div>
+    </a>
+
   </div>
 
-</div><!-- end page-havision -->
+  <!-- Tools -->
+  <div class="section-label">🔧 도구</div>
+  <div class="cards-grid">
 
-</div><!-- end content -->
+    <a class="course-card" href="https://lionsgate.vch.ca" target="_blank" style="--card-color:#2e7c6e">
+      <div class="card-icon">🦁</div>
+      <div class="card-code">Lions Gate Hospital</div>
+      <div class="card-title">봉사 · Information Desk</div>
+      <div class="card-desc">VCH Lions Gate Hospital 봉사 포털.</div>
+      <div class="card-arrow">↗</div>
+    </a>
 
-<script>
-function showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  btn.classList.add('active');
-}
+    <a class="course-card" href="https://www.bcit.ca" target="_blank" style="--card-color:#993c1d">
+      <div class="card-icon">🎓</div>
+      <div class="card-code">BCIT</div>
+      <div class="card-title">BCIT 포털</div>
+      <div class="card-desc">강의, 과제, 성적 확인.</div>
+      <div class="card-arrow">↗</div>
+    </a>
 
-function showSub(id, btn, page) {
-  const parent = document.getElementById('page-' + page);
-  parent.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
-  parent.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(page + '-' + id).classList.add('active');
-  btn.classList.add('active');
-}
+  </div>
 
-function toggleLevel(el) {
-  el.classList.toggle('open');
-}
+</main>
 
-function flipCard(el) {
-  el.classList.toggle('open');
-}
+<footer>
+  BCIT Healthcare Unit Clerk · 2026 · Doha's Study Hub
+</footer>
 
-function toggleQA(btn) {
-  const a = btn.nextElementSibling;
-  btn.classList.toggle('open');
-  a.classList.toggle('open');
-}
-</script>
 </body>
 </html>
