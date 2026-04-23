@@ -429,9 +429,10 @@ header {
 
 <nav class="main-nav">
   <div class="main-nav-inner">
-    <button class="main-tab active" onclick="showPage('notes', this)">Study Notes</button>
+    <button class="main-tab active" onclick="showPage('notes', this)">📋 Week 1 Notes</button>
     <button class="main-tab" onclick="showPage('qa', this)">Short Answer Q&A</button>
     <button class="main-tab" onclick="showPage('havision', this)">HA Vision / Values</button>
+    <button class="main-tab" onclick="showPage('cerner', this)" style="background:rgba(24,95,165,0.15);color:#185fa5;font-weight:700">💻 Week 2-3 CST Cerner</button>
   </div>
 </nav>
 
@@ -1411,6 +1412,640 @@ header {
   </div>
 
 </div><!-- end page-havision -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 4 — WEEK 2-3 CST CERNER
+═══════════════════════════════════════════════ -->
+<div id="page-cerner" class="page">
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSub('cst-overview', this, 'cerner')">CST 개요</button>
+    <button class="sub-tab" onclick="showSub('cst-powerchart', this, 'cerner')">PowerChart</button>
+    <button class="sub-tab" onclick="showSub('cst-mptl', this, 'cerner')">MPTL / SPTL</button>
+    <button class="sub-tab" onclick="showSub('cst-orders', this, 'cerner')">Orders</button>
+    <button class="sub-tab" onclick="showSub('cst-registration', this, 'cerner')">등록 / PHN</button>
+    <button class="sub-tab" onclick="showSub('cst-devices', this, 'cerner')">기기 연동</button>
+    <button class="sub-tab" onclick="showSub('cst-mustknow', this, 'cerner')" style="background:#854f0b;color:#fff;border-radius:6px">⭐ 필수암기</button>
+  </div>
+
+  <!-- CST OVERVIEW -->
+  <div id="cerner-cst-overview" class="sub-section active">
+    <div class="section-label">CST Cerner 개요 — What is CST?</div>
+
+    <div class="level-list">
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#185fa5"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">CST란? (Clinical & Systems Transformation)</div>
+            <div class="level-sub">VCH + PHSA + PHC 공동 프로젝트 · 전자 임상정보시스템</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기</span><br><br>
+          <strong>CST = Clinical & Systems Transformation</strong><br><br>
+          VCH, PHSA, PHC 3개 기관의 공동 임상 시스템 전환 프로젝트<br><br>
+          <strong>핵심 시스템:</strong> CST Cerner (Oracle Cerner Millennium 기반)<br><br>
+          <strong>목표:</strong> 안전성↑, 품질↑, 환자케어 일관성↑<br><br>
+          <strong>한국어 예시:</strong> 예전엔 종이차트 → 이제 모든 게 전자 시스템 하나로 통합
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#3b6d11"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">CST Cerner 주요 장점</div>
+            <div class="level-sub">전자화·통합·안전성 향상</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <strong>장점 목록:</strong><br><br>
+          • 자동 예약 알림 (전화/문자/이메일) → 노쇼 감소<br>
+          • Sunquest Clinical Collect — 바코드로 검체 라벨 즉시 출력 → 오류 방지<br>
+          • BC 전역 외부 lab/ECG 결과 실시간 접근<br>
+          • Endopro — 내시경/기관지경 결과 통합 뷰<br>
+          • 농촌↔도시 간 원격 전자 의무기록 공유<br><br>
+          <strong>Closed Loop Medication Management (CLMM):</strong><br>
+          올바른 환자 · 올바른 약 · 올바른 용량 · 올바른 시간 · 올바른 기록 — 5 Rights
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#993c1d"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">CLMM — Closed Loop Medication Management</div>
+            <div class="level-sub">완전 전자 투약 관리 · 안전 체크포인트 포함</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기</span><br><br>
+          <strong>의미:</strong> 처방 → 조제 → 투약까지 완전 전자화된 순환 고리<br><br>
+          <strong>포함 내용:</strong> eMAR (전자 투약 기록), 바코드 스캔, 약물 상호작용 자동 체크<br><br>
+          <strong>5 Rights:</strong><br>
+          1. Right Patient (올바른 환자)<br>
+          2. Right Drug (올바른 약)<br>
+          3. Right Dose (올바른 용량)<br>
+          4. Right Time (올바른 시간)<br>
+          5. Right Documentation (올바른 기록)<br><br>
+          <strong>예시:</strong> 간호사가 투약 전 환자 팔찌 바코드 스캔 → 시스템이 처방과 자동 대조
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POWERCHART -->
+  <div id="cerner-cst-powerchart" class="sub-section">
+    <div class="section-label">PowerChart — CST Cerner의 메인 앱</div>
+    <div class="hint">Unit Clerk이 매일 사용하는 핵심 애플리케이션</div>
+    <div class="card-grid">
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">화면 구조</div>
+        <div class="card-en">Banner Bar</div>
+        <div class="card-ko">환자 핵심 정보 상단 고정 바</div>
+        <div class="card-detail">
+          <strong>Banner Bar 표시 내용 (암기):</strong><br>
+          이름 · 알레르기 · 나이/생년월일 · Encounter 유형/번호 · Code Status · Dosing Weight · 
+          Process/Disease/Isolation 알림 · 환자 위치 · 담당의<br><br>
+          <strong>중요:</strong> 모든 사람이 차트 열면 항상 볼 수 있음
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">화면 구조</div>
+        <div class="card-en">Toolbar</div>
+        <div class="card-ko">상단 도구 모음</div>
+        <div class="card-detail">
+          주요 버튼들:<br>
+          • <strong>Multi-Patient Task List</strong> — MPTL 이동<br>
+          • <strong>Patient List</strong> — 환자 목록<br>
+          • <strong>PM Conversation</strong> — 등록/알림 관리<br>
+          • <strong>FormFast WFI</strong> — 라벨/서류 출력<br>
+          • <strong>CST Cerner Help</strong> — 도움말<br>
+          • <strong>Add</strong> — 오더 추가
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">화면 구조</div>
+        <div class="card-en">Menu (left side)</div>
+        <div class="card-ko">왼쪽 차트 메뉴 — 종이차트 탭 역할</div>
+        <div class="card-detail">
+          주요 메뉴 항목:<br>
+          • Patient Summary, Mental Health Summary<br>
+          • <strong>Orders</strong> — 오더 목록<br>
+          • <strong>Single Patient Task List (SPTL)</strong><br>
+          • Results Review, Documentation<br>
+          • Notes, Histories, Allergies<br>
+          • Diagnoses and Problems, Medication List
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">Patient Summary 탭</div>
+        <div class="card-en">Patient Summary Tabs</div>
+        <div class="card-ko">차트 요약 5개 탭</div>
+        <div class="card-detail">
+          5개 탭:<br>
+          1. <strong>Handoff Tool</strong> — 인계 정보<br>
+          2. <strong>Summary</strong> — 대시보드<br>
+          3. <strong>Assessment</strong> — 평가 대시보드<br>
+          4. <strong>Discharge</strong> — 퇴원 관련<br>
+          5. <strong>Patient Preferred Info</strong><br><br>
+          <strong>중요:</strong> Refresh 아이콘 자주 클릭 — 자동 업데이트 안 됨!
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">PowerChart 기능</div>
+        <div class="card-en">Key PowerChart Functions</div>
+        <div class="card-ko">PowerChart 핵심 기능</div>
+        <div class="card-detail">
+          • 전자 임상 문서화, 오더, eMAR, 약물 조정<br>
+          • 실시간 동시 접근 — 여러 사람이 동시에 열 수 있음<br>
+          • 환자 등록, 스케줄링, 트리아지, 차트 관리<br>
+          • CPOE (Computerized Provider Order Entry) — 오더 직접 입력<br>
+          • 코딩/인포매틱스 — 성과 측정, 연구, 국가 벤치마킹
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">Patient List 설정</div>
+        <div class="card-en">Location Patient List</div>
+        <div class="card-ko">위치 기반 환자 목록</div>
+        <div class="card-detail">
+          <strong>설정 방법:</strong><br>
+          Patient List → List Maintenance → New → Location → 병원 선택 → 병동 선택 → Finish<br><br>
+          <strong>특징:</strong><br>
+          • 입원 시 자동 추가, 퇴원/이송 시 자동 제거<br>
+          • 한 번 설정하면 프로필에 저장 — 매번 안 해도 됨<br>
+          • 여러 병동 커버 시 여러 unit 체크 가능<br><br>
+          예: LGH 4 East, 6 East, ED Hold
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MPTL / SPTL -->
+  <div id="cerner-cst-mptl" class="sub-section">
+    <div class="section-label">MPTL / SPTL — Task List 완전 정리</div>
+    <div class="level-list">
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#185fa5"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">MPTL — Multi-Patient Task List</div>
+            <div class="level-sub">여러 환자 태스크 한 번에 보기 · 교대 시작 시 사용</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기</span><br><br>
+          <strong>목적:</strong> 여러 환자의 태스크를 한 화면에서 관리<br><br>
+          <strong>태스크란?</strong> 오더나 규칙에 의해 자동 생성 — 특정 케어 활동 알림<br>
+          예: 프로세스 알림 추가, ECG 요청, Bed Transfer Request<br><br>
+          <strong>설정 필수 2가지:</strong><br>
+          1. <strong>Patient List</strong> 선택 (Assign Tasks 우클릭 → Customize Patient View)<br>
+          2. <strong>Time Frame</strong> 설정 (Time Frames 탭 → Defined Time Frame → Current → 8 Hour Day Shift)<br><br>
+          <strong>⚠ 주의:</strong> Time Frame 설정 안 하면 태스크 안 보임!<br><br>
+          <strong>MPTL 구성:</strong> Task list toolbar / Information bar / Navigator (환자 목록) / List of patient tasks
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#534ab7"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">SPTL — Single Patient Task List</div>
+            <div class="level-sub">차트 열린 상태에서 한 환자 태스크 보기</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <strong>SPTL vs MPTL 차이:</strong><br><br>
+          SPTL = 현재 열린 환자 1명만 / Menu에서 접근<br>
+          MPTL = 전체 병동 여러 환자 / Toolbar에서 접근<br><br>
+          기능은 동일 (Time Frame 설정, Chart Done, 우클릭 메뉴)<br><br>
+          <strong>언제 사용?</strong> 차트 이미 열려 있을 때 — MPTL 안 돌아가도 됨
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#3b6d11"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">태스크 완료 처리 — Chart Done</div>
+            <div class="level-sub">완료 후 반드시 Chart Done → Refresh</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기 — 순서 중요</span><br><br>
+          <strong>절차:</strong><br>
+          1. 실제 행동 완료 (예: Process Alert 추가)<br>
+          2. MPTL에서 해당 태스크 우클릭<br>
+          3. <strong>Chart Done (Date/Time)</strong> 선택<br>
+          4. 날짜/시간 확인 → OK<br>
+          5. <strong>Refresh</strong> 클릭 → 태스크 목록에서 사라짐<br><br>
+          기타 옵션: Chart Not Done / Reschedule Task<br><br>
+          <strong>⚠ 중요:</strong> 실제 행동 먼저 → 그 다음 Chart Done!
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#993c1d"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">Process Alert 추가</div>
+            <div class="level-sub">PM Conversation → Process Alert → Violence Risk 등</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기 — 절차</span><br><br>
+          <strong>Process Alert란?</strong> 환자의 특정 위험을 알리는 Banner Bar 표시 플래그<br><br>
+          <strong>종류:</strong> Violence Risk · Falls Risk · Isolation · Palliative Flag · Seizure Precautions · Special Care Plan · Unsafe Sharp Risks · Visitor Restrictions · Familiar Faces<br><br>
+          <strong>추가 절차:</strong><br>
+          MPTL에서 환자 선택 → PM Conversation 드롭다운 → Process Alert<br>
+          → LGH Lions Gate Hospital 선택 → OK<br>
+          → 빈 박스 클릭 (녹색으로 변함) → 알림 선택 → Move → Complete<br>
+          → Yes (차트 열기) → Refresh → Banner Bar에 표시 확인<br><br>
+          <strong>PM Conversation으로 할 수 있는 것:</strong> 알림·위치·Encounter 정보·인구통계 관리
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ORDERS -->
+  <div id="cerner-cst-orders" class="sub-section">
+    <div class="section-label">Orders — 오더 관리</div>
+    <div class="hint">Unit Clerk이 직접 낼 수 있는 오더는 2가지뿐!</div>
+    <div class="card-grid">
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기 ⭐</span>
+        <div class="card-label">Unit Clerk 오더 #1</div>
+        <div class="card-en">Unit Clerk Communication to Lab</div>
+        <div class="card-ko">랩에 루틴 메시지 전송</div>
+        <div class="card-detail">
+          <strong>목적:</strong> 환자가 병동으로 돌아와 채혈 준비됐음을 랩에 알림<br><br>
+          절차: + Add → "unit clerk" 검색 → 선택 → Special Instructions에 메시지 입력 → Sign<br><br>
+          <strong>⚠ 주의:</strong><br>
+          • 긴급 메시지는 전화로! (이 오더 아님)<br>
+          • 오더 변경 불가 — Provider가 취소 후 재오더 필요<br><br>
+          처리 후 Refresh → Status: Processing → Completed
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기 ⭐</span>
+        <div class="card-label">Unit Clerk 오더 #2</div>
+        <div class="card-en">Send Meal</div>
+        <div class="card-ko">식사 트레이 요청</div>
+        <div class="card-detail">
+          <strong>목적:</strong> 식사 시간 변경, 추가 트레이, 포장 식사 요청<br><br>
+          절차: + Add → "send meal" 검색 → Ordering Physician + Communication Type 선택 (No Cosignature Required) → Done → Special Instructions 입력 → Sign<br><br>
+          <strong>⚠ 주의:</strong> Provider의 Diet Order가 먼저 있어야 함!<br><br>
+          처리 후 Refresh → Status: Processing → Ordered
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">Orders Profile</div>
+        <div class="card-en">Order Status Types</div>
+        <div class="card-ko">오더 상태 5종류</div>
+        <div class="card-detail">
+          <strong>오더 상태 (암기):</strong><br>
+          • <strong>Processing</strong> — 입력됨, Refresh 필요<br>
+          • <strong>Ordered</strong> — 활성 오더<br>
+          • <strong>Future</strong> — 미래 방문용<br>
+          • <strong>Discontinued</strong> — 1회 이상 실행 후 중단<br>
+          • <strong>Cancelled</strong> — 실행 전 취소<br><br>
+          오더 카테고리: Plans / Admit-Transfer-Discharge / Patient Care / Activity / Diet / Medications / Diagnostic Tests / Communication Orders
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">Order Information</div>
+        <div class="card-en">Viewing Order Details</div>
+        <div class="card-ko">오더 세부 정보 확인</div>
+        <div class="card-detail">
+          <strong>방법:</strong> 오더 우클릭 → Order Information<br><br>
+          탭: Details / Additional Info / History / Comments / Results<br><br>
+          <strong>Special Instructions</strong> — Provider가 Unit Clerk에게 특별 지시 전달 (예: Violence Risk Process Alert 추가 요청)<br><br>
+          Order Icons 의미:<br>
+          👁 nurse review 필요 / 📋 추가 참조 텍스트 / 🟦 PowerPlan 포함 / 💊 약국 확인 필요
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">FormFast WFI</div>
+        <div class="card-en">Printing Labels & Forms</div>
+        <div class="card-ko">라벨·동의서·서류 출력</div>
+        <div class="card-detail">
+          <strong>목적:</strong> 차트 라벨, 수술 동의서, 혈액 동의서 등 출력<br><br>
+          절차: FormFast WFI 버튼 클릭 → 환자 이름 체크 → Filter Jobs에서 검색 → 항목 선택 → 복사본 수 설정 → Print → 프린터 선택 → OK<br><br>
+          <strong>TIP:</strong> 자주 쓰는 항목 우클릭 → Add → Favorites에 저장<br><br>
+          <strong>⚠:</strong> 복사본 수는 PrintWindow가 아닌 FormFast에서만 변경 가능
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- REGISTRATION / PHN -->
+  <div id="cerner-cst-registration" class="sub-section">
+    <div class="section-label">등록 / PHN — Patient Registration</div>
+    <div class="hint">CST Stay in Touch 브로셔 내용 포함</div>
+    <div class="level-list">
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#185fa5"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">환자 등록 11개 필수 항목 (Mandatory Data Elements)</div>
+            <div class="level-sub">모든 환자 등록 시 반드시 확인/수집</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기 — 11가지</span><br><br>
+          1. MRN (시스템 자동 할당)<br>
+          2. PHN / Health Insurance Plan<br>
+          3. Full Last Name<br>
+          4. Full First Name<br>
+          5. Full Middle Name (해당 시)<br>
+          6. Gender<br>
+          7. Date of Birth<br>
+          8. Full Address (postal code 포함)<br>
+          9. Telephone Number<br>
+          10. Emergency/Next of Kin Contact<br>
+          11. <strong>Primary Care Provider (PCP)</strong> — 매 입원마다 재확인 필수!
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#3b6d11"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">환자 검색 절차</div>
+            <div class="level-sub">CST Cerner 먼저 → EMPI → 새 등록</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">암기 — 순서</span><br><br>
+          <strong>Step 1: CST Cerner 검색</strong><br>
+          ① BC PHN으로 검색<br>
+          ② 성명(Full Last + First)으로 검색<br>
+          ③ 생년월일 + 성별로 검색<br><br>
+          <strong>Step 2: EMPI 검색</strong> (Cerner에 없을 때)<br>
+          ① BC PHN<br>
+          ② 성명 + 생년월일 또는 전화 또는 우편번호<br>
+          ⚠ EMPI: 검색 사이 반드시 RESET 클릭 / 부분 이름 검색 불가<br><br>
+          <strong>Step 3:</strong> 둘 다 없으면 → 신규 등록<br><br>
+          ⚠ 각 검색 방법 모두 3번 따로 시도! RESET 필수!
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#854f0b"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">PHN 신규 발급 주의사항</div>
+            <div class="level-sub">BC 헬스케어 시스템 처음 접촉하는 환자만</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">⚠ 중요</span><br><br>
+          <strong>새 PHN 발급 대상:</strong><br>
+          • 타 주/해외에서 처음 BC 헬스케어 이용<br>
+          • 집에서 태어난 신생아 (병원 태생 아님)<br><br>
+          <strong>주의:</strong><br>
+          • 신규 발급 전 Cerner + EMPI 철저히 검색<br>
+          • PHN 실수로 생성되면 → Data Quality 팀 연락<br>
+          • Cancel 눌러도 이미 PHN & MRN 생성됨 (취소 불가!)<br><br>
+          <strong>Data Quality 팀:</strong> cris@providencehealth.bc.ca / 604-806-8106
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#534ab7"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">MSP 보험 상태 / Health Plan 선택</div>
+            <div class="level-sub">HIBC 실시간 확인 · 상황별 적용 플랜 다름</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <strong>MSP 상태 4가지:</strong><br>
+          • <strong>YES</strong> — BC MSP 가입, BC Resident MSP 선택<br>
+          • <strong>NO</strong> — MSP 미가입, 적절한 플랜 선택 (Uninsured Resident 등)<br>
+          • <strong>NOT CHECKED/BLANK</strong> — 신규 PHN 요청 상태, 신생아는 BC MSP 없음<br>
+          • <strong>NOT AVAILABLE</strong> — EMPI 다운, 현재 절차 따름<br><br>
+          <strong>Primary Plans:</strong> BC Resident MSP · 타 주 보험 · Work Injury (WCB/RCMP/군인) · 난민<br>
+          <strong>Secondary Plans:</strong> FNHA · Department of Veterans Affairs · ICBC<br><br>
+          ⚠ 타 주/해외 거주증명 없으면 Non-Resident of Canada로 처리
+        </div>
+      </div>
+
+      <div class="level-card" onclick="toggleLevel(this)">
+        <div class="level-header">
+          <div class="level-dot" style="background:#993c1d"></div>
+          <div class="level-title-wrap">
+            <div class="level-title">환자 정보 수정 규칙</div>
+            <div class="level-sub">PHN/이름/생년월일/성별 수정 시 주의사항</div>
+          </div>
+          <svg class="level-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="level-detail">
+          <span class="card-chip chip-mem">⚠ 규칙</span><br><br>
+          • BC Services Card와 일치해야 함<br>
+          • 수정 권한: 입원 병동/클리닉 Unit Clerk 또는 Data Quality<br>
+          • 입원 중 이름 변경: EMPI 비교창에서 하지 말 것 (안전 우려 제외)<br>
+          • 이름 변경은 퇴원 후에<br>
+          • 수정 시 하위 시스템 전부 알림 필요 + 라벨/밴드 전부 교체<br><br>
+          <strong>EMPI 비교 창 팁:</strong><br>
+          &lt;Update&gt; = EMPI 정보를 Cerner로 당겨옴 (취소해도 저장됨!)<br>
+          &lt;Not a Match&gt; = 동일인 아님, 검색창으로 돌아감<br>
+          둘 다 맞지 않으면 → &lt;Retain all Cerner values&gt;
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DEVICES -->
+  <div id="cerner-cst-devices" class="sub-section">
+    <div class="section-label">기기 연동 — Medical Device Integration</div>
+    <div class="card-grid">
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">기기 #1</div>
+        <div class="card-en">BMDI — Bedside Medical Device Interface</div>
+        <div class="card-ko">침상 기기 → Cerner 자동 전송</div>
+        <div class="card-detail">
+          환자에 직접 연결된 침상 기기(모니터)에서 실시간 활력징후·혈역학 데이터를 환자 차트로 자동 전송<br><br>
+          예: 혈압계, 산소포화도 모니터 → 간호사가 수동 입력 불필요
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">기기 #2</div>
+        <div class="card-en">Workstation on Wheels (WOW)</div>
+        <div class="card-ko">이동형 워크스테이션</div>
+        <div class="card-detail">
+          병동 어디서든 이동하면서 Cerner 접근 가능한 이동형 컴퓨터<br><br>
+          간호사가 침상에서 직접 차트 열고 문서화 가능
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-mem">암기</span>
+        <div class="card-label">기기 #3</div>
+        <div class="card-en">Medication Delivery Cart (MDC) / Omni Cell</div>
+        <div class="card-ko">약품 자동 투약 카트</div>
+        <div class="card-detail">
+          약품 자동 분류·출고 시스템<br><br>
+          CLMM의 일부 — 처방이 Cerner에 입력되면 MDC/OmniCell에서 정확한 약을 출고
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">기기 #4</div>
+        <div class="card-en">Sunquest Clinical Collect</div>
+        <div class="card-ko">검체 바코드 라벨 즉시 출력</div>
+        <div class="card-detail">
+          환자 침상에서 검체 채취 시 환자 바코드 스캔 → 즉시 검체 라벨 출력<br><br>
+          → 양성 환자 확인, 검체 라벨 오류 방지
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">기기 #5</div>
+        <div class="card-en">FESR — Front End Speech Recognition</div>
+        <div class="card-ko">음성 인식 문서화</div>
+        <div class="card-detail">
+          의사/임상가가 말로 차트 문서화 — 타이핑 대신 음성으로 입력<br><br>
+          Telephone Dictation도 유사 — 전화로 음성 녹음 → 전사
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="flipCard(this)">
+        <span class="card-chip chip-info">이해</span>
+        <div class="card-label">기기 #6</div>
+        <div class="card-en">FetaLink</div>
+        <div class="card-ko">태아 모니터링 시스템</div>
+        <div class="card-detail">
+          PowerChart Maternity와 연동<br><br>
+          태아 심박수 모니터링 데이터를 Cerner에 통합<br><br>
+          → 수기 차트 오해 방지, 안전한 산모/태아 케어
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MUST KNOW W2-3 -->
+  <div id="cerner-cst-mustknow" class="sub-section">
+    <div class="section-label">⭐ Week 2-3 필수 암기</div>
+
+    <div style="background:#e6f1fb;border:1px solid #a8caed;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#185fa5;margin-bottom:10px">CST 기본 개념</div>
+      <div style="font-size:13px;line-height:1.9;color:#0d2a4a">
+        <strong>CST 3개 기관:</strong> VCH · PHSA · PHC (Providence Health Care)<br>
+        <strong>CLMM 5 Rights:</strong> Right Patient · Drug · Dose · Time · Documentation<br>
+        <strong>PowerChart =</strong> CST Cerner의 메인 임상 앱<br>
+        <strong>CPOE =</strong> Computerized Provider Order Entry (전자 오더 입력)<br>
+        <strong>eMAR =</strong> Electronic Medication Administration Record (전자 투약 기록)<br>
+        <strong>Refresh 아이콘:</strong> 차트 자동 업데이트 안 됨 → 의심되면 Refresh!
+      </div>
+    </div>
+
+    <div style="background:#faeeda;border:1px solid #e8c97a;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#854f0b;margin-bottom:10px">MPTL 핵심 (매우 자주 출제)</div>
+      <div style="font-size:13px;line-height:1.9;color:#3a2a10">
+        <strong>MPTL 설정 2가지:</strong> ① Patient List 선택 ② Time Frame 설정<br>
+        <strong>Time Frame 빠트리면?</strong> → 태스크 안 보임<br>
+        <strong>태스크 완료 순서:</strong> 실제 행동 먼저 → Chart Done → OK → Refresh<br>
+        <strong>MPTL vs SPTL:</strong> MPTL = 다수 환자 (Toolbar) / SPTL = 1명 (Menu)<br>
+        <strong>Process Alert 추가:</strong> PM Conversation → Process Alert → Move → Complete
+      </div>
+    </div>
+
+    <div style="background:#faece7;border:1px solid #e8a898;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#993c1d;margin-bottom:10px">Unit Clerk 오더 2가지 (꼭 암기)</div>
+      <div style="font-size:13px;line-height:1.9;color:#3a1005">
+        <strong>① Unit Clerk Communication to Lab</strong><br>
+        → 랩에 루틴 메시지 (환자 채혈 준비됨 등) · 긴급 시 전화로!<br>
+        처리 후: Processing → <strong>Completed</strong><br><br>
+        <strong>② Send Meal</strong><br>
+        → 식사 트레이 시간/장소 변경, 추가 트레이 · Provider의 Diet Order 먼저 있어야!<br>
+        처리 후: Processing → <strong>Ordered</strong><br><br>
+        <strong>오더 상태 암기:</strong> Processing / Ordered / Future / Discontinued / Cancelled
+      </div>
+    </div>
+
+    <div style="background:#eaf3de;border:1px solid #b8d98a;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#3b6d11;margin-bottom:10px">등록 / PHN 핵심</div>
+      <div style="font-size:13px;line-height:1.9;color:#1a3008">
+        <strong>11개 필수 항목 암기:</strong> MRN · PHN · 성 · 이름 · 중간이름 · 성별 · 생년월일 · 주소 · 전화 · 비상연락처 · PCP<br>
+        <strong>PCP:</strong> 매 입원마다 재확인 필수!<br>
+        <strong>검색 순서:</strong> Cerner(PHN→이름→생년월일+성별) → EMPI → 신규 등록<br>
+        <strong>새 PHN:</strong> BC 헬스케어 처음인 환자만 (타 주/해외, 집에서 태어난 신생아)<br>
+        <strong>Cancel 눌러도</strong> PHN/MRN 이미 생성됨 → 실수 시 Data Quality 연락<br>
+        <strong>EMPI 팁:</strong> 검색 사이 RESET / 부분 이름 검색 불가 / &lt;Update&gt; 클릭하면 취소 불가
+      </div>
+    </div>
+
+    <div style="background:#eeedfe;border:1px solid #c0b8f0;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#534ab7;margin-bottom:10px">Banner Bar 표시 항목 (암기)</div>
+      <div style="font-size:13px;line-height:1.9;color:#1a1060">
+        이름 · 알레르기 · 나이/생년월일 · Encounter 유형+번호 · Code Status · Dosing Weight<br>
+        · <strong>Process/Disease/Isolation 알림</strong> · 위치 · 담당의<br><br>
+        <strong>Process Alert 종류:</strong> Violence Risk · Falls Risk · Isolation · Palliative Flag · Seizure Precautions · Special Care Plan 등
+      </div>
+    </div>
+
+    <div style="background:#e1f5ee;border:1px solid #b2dfd0;border-radius:8px;padding:14px;margin-bottom:14px">
+      <div style="font-size:12px;font-weight:700;color:#0f6e56;margin-bottom:10px">기기 연동 (시험에 자주 나옴)</div>
+      <div style="font-size:13px;line-height:1.9;color:#053320">
+        <strong>BMDI</strong> — 침상 기기에서 활력징후 자동으로 차트 전송<br>
+        <strong>WOW</strong> — 이동형 컴퓨터 (Workstation on Wheels)<br>
+        <strong>MDC/OmniCell</strong> — 자동 약품 분류 카트<br>
+        <strong>Sunquest Clinical Collect</strong> — 바코드로 검체 라벨 즉시 출력<br>
+        <strong>FESR</strong> — 음성 인식 문서화 (Front End Speech Recognition)<br>
+        <strong>FetaLink</strong> — 태아 모니터링 데이터 → Cerner 통합
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end page-cerner -->
 
 </div><!-- end content -->
 
